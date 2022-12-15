@@ -1,7 +1,5 @@
 package sky.pro.questionforexamspring.model;
 
-
-
 import java.util.Objects;
 
 public class Question {
@@ -13,9 +11,13 @@ public class Question {
         this.answer = answer;
     }
 
-    public String getQuestion() {return question;}
+    public String getQuestion() {
+        return question;
+    }
 
-    public String getAnswer() {return answer;}
+    public String getAnswer() {
+        return answer;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -26,8 +28,12 @@ public class Question {
     }
 
     @Override
-    public int hashCode() {return Objects.hash(question, answer);}
+    public int hashCode() {
+        return Objects.hash(question, answer);
+    }
 
     @Override
-    public String toString() {return "вопрос: " + question + ", ответ: " + answer;}
+    public String toString() {
+        return "вопрос: " + question + ", ответ: " + answer;
+    }
 }

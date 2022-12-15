@@ -1,3 +1,9 @@
+### добавить вопрос/ответ
+GET  http://localhost:8080/exam/java/add?question=null&answer=QuestionAnswer0
+
+### добавить вопрос0/ответ0
+GET  http://localhost:8080/exam/java/add?question=QuestionText0&answer=QuestionAnswer0
+
 ### добавить вопрос1/ответ1
 GET  http://localhost:8080/exam/java/add?question=QuestionText1&answer=QuestionAnswer1
 
@@ -61,8 +67,17 @@ GET  http://localhost:8080/exam/java/add?question=QuestionText0&answer=QuestionA
 ### удалить вопрос0/ответ0
 GET  http://localhost:8080/exam/java/remove?question=QuestionText0&answer=QuestionAnswer0
 
+### удалить вопрос15/ответ15
+GET  http://localhost:8080/exam/java/remove?question=QuestionText15&answer=QuestionAnswer15
+
+### удалить не существующие вопрос20/ответ20
+GET  http://localhost:8080/exam/java/remove?question=QuestionText20&answer=QuestionAnswer20
+
+### удалить не существующую пару вопрос1/ответ2
+GET  http://localhost:8080/exam/java/remove?question=QuestionText1&answer=QuestionAnswer2
+
 ### получить все вопросы/ответы
 GET  http://localhost:8080/exam/java
 
-### получить экзаменационный билет с количеством вопросов int amount
-GET http://localhost:8080//exam/get/{amount}
+### получить экзаменационный билет с количеством вопросов
+GET http://localhost:8080/exam/get/3

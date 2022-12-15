@@ -1,62 +1,55 @@
 package sky.pro.questionforexamspring.service;
 
 import org.springframework.stereotype.Service;
+import sky.pro.questionforexamspring.exception.AbsenceArgumentException;
 import sky.pro.questionforexamspring.exception.FieldsShouldNotBeEmptyException;
 import sky.pro.questionforexamspring.model.Question;
-import sky.pro.questionforexamspring.record.QuestionRequest;
+import java.util.*;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 @Service
-public class QuestionServiceImpl implements QuestionService{
-    private Set<Question> questions = new HashSet<>();
-
-    public QuestionServiceImpl(Set<Question> questions) {this.questions = questions;}
-
-    @Override
-    public Question add(Question question) {
-        if (questions.contains(question)){
-            throw new IllegalArgumentException("такие вопрос/ответ уже существуют");
-        }
-        questions.add(question);
-        return question;
-    }
+public class QuestionServiceImpl implements QuestionService {
+    private final Set<Question> questions = new HashSet<>();
+    private Random random = new Random();
 
     @Override
     public Question add(String questionStr, String answerStr) {
-        if(questionStr == null || answerStr == null){
-        throw new FieldsShouldNotBeEmptyException("поля вопрос и/или ответ должны быть заполнены");
+        if (!questionStr.equals("null") && !answerStr.equals("null")) {
+            Question question = new Question(questionStr, answerStr);
+            questions.add(question);
+            return question;
         }
-        Question question = new Question(questionStr, answerStr);
+        throw new FieldsShouldNotBeEmptyException("поля вопрос и/или ответ должны быть заполнены");
+    }
 
+    @Override
+    public Question add(Question question) {
+//        if (questions.contains(question)) {
+//            throw new ThisArgumentAlreadyExistsException("такая пара вопрос/ответ уже существуют");
+//        }
         questions.add(question);
         return question;
     }
 
-
-
-
-
     @Override
-    public Collection<Question> getAllQuestion() {
-        return this.questions;
+    public Question removeQuestion(String questionStr, String answerStr) {
+        for (Question question : questions)
+            if (question.getQuestion().contains(questionStr) && question.getAnswer().contains(answerStr)) {
+                questions.remove(question);
+                return question;
+            }
+        throw new AbsenceArgumentException("Такой пары вопрос/ответ нет");
     }
 
     @Override
-    public Question removeQuestion(Question question) {
-        questions.remove(question);
-        return question;
+    public Collection<Question> getAllQuestion() {
+        return questions;
     }
 
     @Override
     public Question getRandomQuestion() {
-    java.util.Random random = new java.util.Random();
-    int index = random.nextInt(questions.size()-1);
-        Question question = new Question("q", "a");
-    // questions.stream().filter(questions -> questions.getQuestion().hashCode() == index).get();
-
-     return question;
+        int index = random.nextInt(questions.size() - 1);
+        List<Question> result = questions.stream().toList();
+        return result.get(index);
     }
 }
