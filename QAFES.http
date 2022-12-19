@@ -1,4 +1,7 @@
 ### добавить вопрос/ответ
+GET  http://localhost:8080/exam/java/add?question= &answer=
+
+### добавить вопрос/ответ
 GET  http://localhost:8080/exam/java/add?question=null&answer=QuestionAnswer0
 
 ### добавить вопрос0/ответ0

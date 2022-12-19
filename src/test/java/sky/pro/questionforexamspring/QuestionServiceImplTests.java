@@ -26,7 +26,7 @@ public class QuestionServiceImplTests {
 
     @Test
     public void checkExceptionWhenAdd() {
-        assertThrows(FieldsShouldNotBeEmptyException.class, () -> questionService.add("null", "null"));
+        assertThrows(FieldsShouldNotBeEmptyException.class, () -> questionService.add(" ", " "));
     }
 
     @Test

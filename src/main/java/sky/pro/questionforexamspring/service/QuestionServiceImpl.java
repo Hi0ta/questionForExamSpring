@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import sky.pro.questionforexamspring.exception.AbsenceArgumentException;
 import sky.pro.questionforexamspring.exception.FieldsShouldNotBeEmptyException;
 import sky.pro.questionforexamspring.model.Question;
+
 import java.util.*;
 
 
@@ -14,7 +15,7 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public Question add(String questionStr, String answerStr) {
-        if (!questionStr.equals("null") && !answerStr.equals("null")) {
+        if (!questionStr.isBlank() && !answerStr.isBlank()) {
             Question question = new Question(questionStr, answerStr);
             questions.add(question);
             return question;
@@ -24,20 +25,16 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public Question add(Question question) {
-//        if (questions.contains(question)) {
-//            throw new ThisArgumentAlreadyExistsException("такая пара вопрос/ответ уже существуют");
-//        }
         questions.add(question);
         return question;
     }
 
     @Override
     public Question removeQuestion(String questionStr, String answerStr) {
-        for (Question question : questions)
-            if (question.getQuestion().contains(questionStr) && question.getAnswer().contains(answerStr)) {
-                questions.remove(question);
-                return question;
-            }
+        Question question = new Question(questionStr, answerStr);
+        if (questions.contains(question)) {
+            return question;
+        }
         throw new AbsenceArgumentException("Такой пары вопрос/ответ нет");
     }
 

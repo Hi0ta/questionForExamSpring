@@ -19,13 +19,9 @@ public class QuestionController {
         this.service = service;
     }
 
-//    @ExceptionHandler(value = ThisArgumentAlreadyExistsException.class)
-//    public ResponseEntity<String> ThisArgumentAlreadyExistsHandler(ThisArgumentAlreadyExistsException e) {
-//        return ResponseEntity.badRequest().body(e.getMessage());
-//    }
 
     @ExceptionHandler(value = FieldsShouldNotBeEmptyException.class)
-    public ResponseEntity<String> FieldsShouldNotBeEmptyHandler(FieldsShouldNotBeEmptyException e) {
+    public ResponseEntity<String> fieldsShouldNotBeEmptyHandler(FieldsShouldNotBeEmptyException e) {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 
@@ -36,7 +32,7 @@ public class QuestionController {
     }
 
     @ExceptionHandler(value = AbsenceArgumentException.class)
-    public ResponseEntity<String> AbsenceArgumentHandler(AbsenceArgumentException e) {
+    public ResponseEntity<String> absenceArgumentHandler(AbsenceArgumentException e) {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 
