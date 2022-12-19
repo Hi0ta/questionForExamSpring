@@ -1,0 +1,86 @@
+### добавить вопрос/ответ
+GET  http://localhost:8080/exam/java/add?question= &answer=
+
+### добавить вопрос/ответ
+GET  http://localhost:8080/exam/java/add?question=null&answer=QuestionAnswer0
+
+### добавить вопрос0/ответ0
+GET  http://localhost:8080/exam/java/add?question=QuestionText0&answer=QuestionAnswer0
+
+### добавить вопрос1/ответ1
+GET  http://localhost:8080/exam/java/add?question=QuestionText1&answer=QuestionAnswer1
+
+### добавить вопрос2/ответ2
+GET  http://localhost:8080/exam/java/add?question=QuestionText2&answer=QuestionAnswer2
+
+### добавить вопрос3/ответ3
+GET  http://localhost:8080/exam/java/add?question=QuestionText3&answer=QuestionAnswer3
+
+### добавить вопрос4/ответ4
+GET  http://localhost:8080/exam/java/add?question=QuestionText4&answer=QuestionAnswer4
+
+### добавить вопрос5/ответ5
+GET  http://localhost:8080/exam/java/add?question=QuestionText5&answer=QuestionAnswer5
+
+### добавить вопрос6/ответ6
+GET  http://localhost:8080/exam/java/add?question=QuestionText6&answer=QuestionAnswer6
+
+### добавить вопрос7/ответ7
+GET  http://localhost:8080/exam/java/add?question=QuestionText7&answer=QuestionAnswer7
+
+### добавить вопрос8/ответ8
+GET  http://localhost:8080/exam/java/add?question=QuestionText8&answer=QuestionAnswer8
+
+### добавить вопрос9/ответ9
+GET  http://localhost:8080/exam/java/add?question=QuestionText9&answer=QuestionAnswer9
+
+### добавить вопрос10/ответ10
+GET  http://localhost:8080/exam/java/add?question=QuestionText10&answer=QuestionAnswer10
+
+### добавить вопрос11/ответ11
+GET  http://localhost:8080/exam/java/add?question=QuestionText11&answer=QuestionAnswer11
+
+### добавить вопрос12/ответ12
+GET  http://localhost:8080/exam/java/add?question=QuestionText12&answer=QuestionAnswer12
+
+### добавить вопрос13/ответ13
+GET  http://localhost:8080/exam/java/add?question=QuestionText13&answer=QuestionAnswer13
+
+### добавить вопрос14/ответ14
+GET  http://localhost:8080/exam/java/add?question=QuestionText14&answer=QuestionAnswer14
+
+### добавить вопрос15/ответ15
+GET  http://localhost:8080/exam/java/add?question=QuestionText15&answer=QuestionAnswer15
+
+### добавить вопрос16/ответ16
+GET  http://localhost:8080/exam/java/add?question=QuestionText16&answer=QuestionAnswer16
+
+### добавить вопрос17/ответ17
+GET  http://localhost:8080/exam/java/add?question=QuestionText17&answer=QuestionAnswer17
+
+### добавить вопрос18/ответ18
+GET  http://localhost:8080/exam/java/add?question=QuestionText18&answer=QuestionAnswer18
+
+### добавить вопрос19/ответ19
+GET  http://localhost:8080/exam/java/add?question=QuestionText19&answer=QuestionAnswer19
+
+### добавить вопрос0/ответ0
+GET  http://localhost:8080/exam/java/add?question=QuestionText0&answer=QuestionAnswer0
+
+### удалить вопрос0/ответ0
+GET  http://localhost:8080/exam/java/remove?question=QuestionText0&answer=QuestionAnswer0
+
+### удалить вопрос15/ответ15
+GET  http://localhost:8080/exam/java/remove?question=QuestionText15&answer=QuestionAnswer15
+
+### удалить не существующие вопрос20/ответ20
+GET  http://localhost:8080/exam/java/remove?question=QuestionText20&answer=QuestionAnswer20
+
+### удалить не существующую пару вопрос1/ответ2
+GET  http://localhost:8080/exam/java/remove?question=QuestionText1&answer=QuestionAnswer2
+
+### получить все вопросы/ответы
+GET  http://localhost:8080/exam/java
+
+### получить экзаменационный билет с количеством вопросов
+GET http://localhost:8080/exam/get/3
